@@ -93,7 +93,7 @@ public class InfoView {
 		
 		// 하단 버튼_붙이기
 		JPanel pSouth = new JPanel();				// 만들기
-		pSouth.setLayout(new GridLayout(1,6));		// 그리드 선언
+		pSouth.setLayout(new GridLayout(1,6));		// 그리드 선언 및 1열 6행 버튼 생성
 		f.add(pSouth, BorderLayout.SOUTH);			// 프레임 안에 붙이기 
 		pSouth.add(bAdd);							// 그리드 안에 버튼 붙이기 ↓
 		pSouth.add(bShow);
