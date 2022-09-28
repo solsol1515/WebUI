@@ -15,25 +15,25 @@ public class CalTest {
 	// 1. 멤버 변수 선언
 	JFrame f;
 	JTextField tf;
-	JButton []bNum = new JButton[10]; 	// 0~9 숫자 표현 버튼
-	JButton []bOp  = new JButton[4];	// +, -, *, / 연산자 표현 버튼
+	JButton [] bNum = new JButton[10]; 	// 0~9 숫자 표현 버튼
+	JButton [] bOp  = new JButton[4];	// +, -, *, / 연산자 표현 버튼
 	JButton bEqual;						// = 계산 결과 출력
 	int first, second;					// 처음 입력하는 숫자, 두 번째 입력하는 숫자
 	String op;
 
 	// 2. 객체 생성
 	CalTest(){ // 생성자
-		f = new JFrame("계산기"); 		// 프레임 생성
-		tf = new JTextField(15);		// 텍스트 필드 생성
-		bEqual = new JButton("=");	
-		bNum = new JButton[10];
+		f 		= new JFrame("유치원 계산기"); 		// 프레임 생성
+		tf 		= new JTextField(15);			// 텍스트 필드 생성
+		bEqual  = new JButton("=");				// 연산 후 계산 결과 출력 키 생성
+		bNum 	= new JButton[10];				// 숫자 버튼 배열로 생성 (0~9)
 		for(int i=0; i<bNum.length; i++) {
 			bNum[i] = new JButton(String.valueOf(i)); // bNum에 저장된 값을 String으로 변환
 		}
-		bOp[0] = new JButton("+");
-		bOp[1] = new JButton("-");
-		bOp[2] = new JButton("*");
-		bOp[3] = new JButton("/");
+		bOp[0] 	= new JButton("+");				// +버튼 생성
+		bOp[1] 	= new JButton("-");				// -버튼 생성
+		bOp[2] 	= new JButton("*");				// *버튼 생성
+		bOp[3] 	= new JButton("/");				// /버튼 생성
 
 	} // end of CalTest()
 
@@ -41,7 +41,7 @@ public class CalTest {
 	void addLayout() {
 		f.setLayout(new BorderLayout());
 		JPanel pCenter = new JPanel(new GridLayout(5, 3)); // 5행 3열 pCenter
-		//pCenter.setPreferredSize(new Dimension(250, 100));
+		// pCenter.setPreferredSize(new Dimension(250, 100));
 		for(int i=0; i<bNum.length;i++) {
 			pCenter.add(bNum[i]);
 		}

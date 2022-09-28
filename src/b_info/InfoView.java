@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import javax.swing.ImageIcon;
@@ -22,9 +23,11 @@ public class InfoView {
 	// 1. 멤버 변수 선언
 	
 	JFrame f;
-	JTextField tfName, tfId,   tfTel, tfGender, tfAge, tfHome;
+	JTextField tfName, tfId, tfTel, tfGender, tfAge, tfHome;
 	JTextArea ta;
 	JButton bAdd, bShow, bSearch, bDelete, bCancel, bExit;
+	
+	ArrayList<PersonVO> list = new ArrayList<PersonVO>(); // generics로 노딱 지움(명확하게)
 	
 	// 2. 멤버 변수 객체 생성
 	InfoView(){
@@ -112,31 +115,44 @@ public class InfoView {
 			// 'ADD' 버튼 눌렸을 때 
 			bAdd.addActionListener(new ActionListener() {	
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "이벤트 발생(add)"); 
+					 inputData();
+					 clearTextField();
+					 selectAll(); // 정보 입력 후 Add버튼 누를 경우, ta에 입력한 정보 출력됨
 				}	
 			} );
 		
 			bShow.addActionListener(new ActionListener() {	// 이너클래스($표기)_이벤트의 경우 이너클래스에 많이 사용
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "이벤트 발생(show)");		// 팝업 발생
+					selectAll(); // (위의 Add에도 selectAll() 호출이 되기때문에)Show버튼 누를 경우, ta에 입력한 정보 출력됨
 				}	
 			} );
 			
 			bSearch.addActionListener(new ActionListener() {	// 이너클래스($표기)_이벤트의 경우 이너클래스에 많이 사용
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "이벤트 발생(search)");		// 팝업 발생
+					selectByTel();
 				}	
 			} );
+			
+			// 전화번호 입력 후 텍스트 필드에서 엔터 쳤을 때
+			tfTel.addActionListener(new ActionListener() {	
+				public void actionPerformed(ActionEvent e) {
+					selectByTel();
+				}	
+			} );
+			
 			
 			bDelete.addActionListener(new ActionListener() {	// 이너클래스($표기)_이벤트의 경우 이너클래스에 많이 사용
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "이벤트 발생(delete)");		// 팝업 발생
+					//selectAll();
+					deleteByTel();
+					clearTextField();
 				}	
 			} );
-			
+			// cancel
 			bCancel.addActionListener(new ActionListener() {	// 이너클래스($표기)_이벤트의 경우 이너클래스에 많이 사용
 				public void actionPerformed(ActionEvent e) {
-					JOptionPane.showMessageDialog(null, "이벤트 발생(cancel)");		// 팝업 발생
+					clearTextField();
+					
 				}	
 			} );
 			
@@ -162,7 +178,107 @@ public class InfoView {
 				} 	
 			} ) ; // end of addFocusListener
 			
-			} // end of eventProc()			
+			} // end of eventProc()		
+		
+		// 'ADD' 버튼 눌렸을 때 텍스트 필드에 입력한 사용자의 값들을 PersonVO에 저장하기
+		void inputData() {
+			// (1) 각각의 텍스트 필드의 입력값 얻어오기
+				// String name = tfName.getText(); (1)과 (2) 따로 쓸 때 사용
+				// String id = tfId.getText();
+				//tfTel.getText();
+				//tfGender.getText();
+				//tfAge.getText();
+				//tfHome.getText();
+			
+			// (2) 1번의 값들을 PersonVO에 멤버변수에 저장(setter / constructor)
+				PersonVO vo = new PersonVO();
+				vo.setName(tfName.getText());
+				vo.setId(tfId.getText());
+				vo.setTel(tfTel.getText());
+				vo.setGender(tfGender.getText());
+				vo.setAge(Integer.parseInt(tfAge.getText()));
+				vo.setHome(tfHome.getText());
+				
+				list.add(vo); // 입력받은 값 ArrayList에 저장
+				
+		} // end of inputData()
+		
+
+		/*
+		 각각의 텍스트 필드와 텍스트 에어리어의 값 지우기
+		 */
+		void clearTextField() {
+			ta.setText(null);
+			// 나머지 텍스트 필드
+			tfName.setText(null);
+			tfId.setText(null);
+			tfTel.setText(null);
+			tfGender.setText(null);
+			tfAge.setText(null);
+			tfHome.setText(null);
+			
+		} // end of clearTextField()
+		
+		/*
+		 리스트에 저장된 정보를 모두 텍스트 에어리어에 출력 
+		 */
+		void selectAll() {
+			ta.setText("-------------------- 전체 목록 --------------------\n"); // 저장 후 show로 입력한 정보 보기위해서 show 눌렀을 때 저장된 값이 중복되서 계속 출력되는 것을 방지하기 위해서 settext
+			for(PersonVO vo : list) { // list의 값을 vo에 저장
+				ta.append(vo.toString()); // ta에 vo의 값을 출력(vo를 형변환해서) settext쓸 경우, 전에 저장했던 정보가 초기화되기때문에 데이터 누적을 위해 append 사용 
+			}
+		} // end of selectAll()
+		
+		/*
+		 * 함수명	: selectByTel
+		 * 인자	: 없음
+		 * 리턴값	: void
+		 * 역할	: search버튼 눌렸을 때 개인 정보 호출, 전화번호 입력 후 엔터 쳤을 때 개인 정보 호출	 ???
+		 * */
+		void selectByTel() {
+			// 입력한 전화번호 값 얻어오기
+			String tel = tfTel.getText(); // 가져온 전화번호 값 String tel에 저장
+			
+			// 입력 받은 전화번호가 공백이라면(if문) 메세지 창("전화번호를 입력하세요") 띄우기
+			if(tel.equals("")) {
+				JOptionPane.showMessageDialog(null, "전화번호를 입력하세요");
+				return;
+			}
+			
+			// 리스트에 저장된 PersonVO의 전화번호와 비교 
+			// 해당 전화번호가 있을 경우, 그 내용을 각각의 텍스트필드에 출력
+				for(PersonVO vo : list) {
+					if(tel.equals(vo.getTel())) { 
+						tfName.setText(vo.getName());
+						tfId.setText(vo.getId());
+						tfTel.setText(vo.getTel());
+						tfGender.setText(vo.getGender());
+						tfAge.setText(Integer.toString(vo.getAge()));
+						tfHome.setText(vo.getHome());
+					} // end of if (텍스트필드에 입력한 전화번호와 vo에 저장된 전화번호 비교)
+				} // end of for 
+		} // end of selectByTel()
+		
+		void deleteByTel() {
+			// 입력한 전화번호 값 얻어오기 	
+			String tel = tfTel.getText();
+			
+			// 입력받은 전화번호가 공백이라면 "전화번호를 입력하세요"라는 메세지 창 출력
+			if(tel.equals("")) {
+				JOptionPane.showMessageDialog(null, "전화번호를 입력하세요");
+				return;
+			}
+			// 리스트에 저장된 PersonVO의 전화번호와 비교하여 
+			// 해당 전화번호가 있으면 해당하는 PersonVO를 리스트에서 삭제
+			// (참고) 삭제하고 나서 break로 반복문 끝내기
+			// 파일 저장 or 데이터베이스에 저장(Oracle)
+			for(PersonVO vo : list) {
+				if(tel.equals(vo.getTel())) { 
+					list.remove(vo);
+					break;
+				}
+			}
+		}
 		
 		void getJuminInfo() {
 			
