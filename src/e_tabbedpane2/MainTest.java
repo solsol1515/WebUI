@@ -43,7 +43,7 @@ public class MainTest {
 		f.setBounds(100, 100, 500, 400);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+	} // end of addLayout()
 	
 	public static void main(String[] args) {
 
