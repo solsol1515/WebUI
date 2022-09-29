@@ -39,7 +39,6 @@ public class MainTest {
 		tab.addTab("메인", panelA);
 		tab.addTab("서브", panelB);
 		tab.addTab("기타", panelC);
-		
 		f.add(tab, BorderLayout.CENTER);
 		
 		f.setBounds(100, 100, 500, 400);
