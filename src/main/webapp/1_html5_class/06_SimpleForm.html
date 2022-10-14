@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_SimpleForm.html</title>
+</head>
+<body>
+
+<form><!-- html에서의 메소드: 전달방식 ( method='post'로 지정할 경우 주소에 저장한 값이 감춰짐) -->
+	<fieldset>
+		<legend> 회원가입 </legend> <!-- 테두리 생성 legend -->
+		<ol>
+			<li>
+				<label for='name'>이름</label>
+				<input type='text' id='name' name='name'>
+			</li>
+			<li>
+				<label for='gender'>성별</label>
+				<input type='radio' name='gender' checked='checked'> 여자
+				<input type='radio' name='gender'> 남자
+			</li>
+			<li>
+				<label for='job'>직업</label>
+				<select id='job' name='job'>
+					<option>개발자</option>
+					<option>프로그래머</option>
+					<option>코더</option>
+					<option>노가다</option>
+				</select>
+			</li>
+			<li>
+				<label for='hobby'>취미</label>
+				<input type='checkbox' name='hobby'>한재연
+				<input type='checkbox' name='hobby'>김재영
+				<input type='checkbox' name='hobby'>김승구
+				<input type='checkbox' name='hobby'>숨쉬기
+			</li>
+			<li>
+				<label for=friends>애인</label>
+				<input type='radio' name='friends' checked='checked'>있다
+				<input type='radio' name='friends'>없다
+			</li>
+			<li>
+				<input type='submit' value='확인'>
+				<input type='reset' value='취소'>
+			</li>
+		</ol>
+	</fieldset>
+</form>
+
+
+</body>
+</html>
