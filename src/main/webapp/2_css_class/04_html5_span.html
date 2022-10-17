@@ -32,7 +32,7 @@ address .addr {
 	font-size: 18px;
 }
 address .tel, address .fax {
-	padding: 0px 3px;
+	padding: 0px 3px; /* 순서대로 반복 0px 3px 0px 3px */
 	color : #aa3302;
 	font-family : Serif;
 }
@@ -42,6 +42,20 @@ address .copyright {
 	color : #ee1212;
 	font-size: 13px;
 }
+
+div#footer ul.guideMenu > li {
+	display: inline;
+	padding: 20px;
+}
+
+div#footer ul.guideMenu > li > a{
+	text-decoration : none;
+}
+
+.addr { cursor : pointer; }
+.tel { cursor : crosshair; }
+.fax { cursor : help;}
+.email{ cursor : progress;}
 
 </style>
 </head>
@@ -60,7 +74,7 @@ address .copyright {
       <li><a href="#">Site map</a></li>
     </ul>
     <address>
-    	<span class="addr">서울시 마포구 상수동 123-12 한주빌딩 5층</span>
+    	<span class="addr">서울시 마포구 배곧동 123-12 재연빌딩 5층</span>
     	<span class="tel">· 전화: 02-1234-1234</span> 
 		<span class="fax">· FAX: 02-1234-1234</span> 
 		<span class="email">· E-MAIL: webmaster@mail.com</span><br/>
