@@ -12,6 +12,7 @@
 </head>
 <body>
 	<form name="frm">
+	// 사용 안 하는 스타일 
 		<input type="button" value="스타일 A" onclick="JavaScript:changeColor('A')">
 		<input type="button" value="스타일 B" onclick="JavaScript:changeColor('B')">
 		<input type="button" value="스타일 C" onclick="JavaScript:changeColor('C')">
@@ -32,7 +33,20 @@
 			
 			// alert("넘겨받은 인자값 : " + colorVar);
 			// colorVar로 넘겨받은 값에 의해 분기하고자 switch~case 문 이용이 바람직
-
+			switch(colorVar){
+			case 'A':
+				document.bgColor = 'lightyellow';
+				document.fgColor = 'red';
+				break;
+			case 'B':
+				document.bgColor = 'green';
+				document.fgColor = 'aliceblue';
+				break;
+			case 'C':
+				document.bgColor = 'gray';
+				document.fgColor = 'orange';
+				break;
+			}
 			
 		}
 	</script>
