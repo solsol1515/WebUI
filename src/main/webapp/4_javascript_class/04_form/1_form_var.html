@@ -4,7 +4,20 @@
 <meta charset="UTF-8">
 <title></title>
 <script type="text/javascript">
-
+window.onload = function(){ // 이거 없으면 지금 패턴대로 이벤트 발생 못 함(인터넷 화면에 불러옴)
+	
+	myForm.txt0.value = '하하'; // txt0에 '하하' 데이터 입력
+	myForm['txt1'].value = '히히히 미친'; // txt1에 '히히히 미친' 데이터 입력
+	
+	
+	document.getElementById('btn').onclick = function btn_click(){
+					// alert('ok');
+		for(var i=0; i<4; i++){
+			// 각각의 텍스트 필드에 data-0 / data-2 ~~~ 
+			myForm['txt' + i].value = 'data-'+i;
+		}			
+	} 
+} 
 </script>
 </head>
 <body>

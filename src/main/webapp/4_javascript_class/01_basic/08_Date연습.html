@@ -12,7 +12,11 @@
 			 var sDate = new Date(s);
 			 var eDate = new Date(e);
 
-	
+			 var diff = eDate - sDate;
+			 /*alert(diff);
+			 */
+			var diff2 = Math.ceil(diff / (1000*60*60*24));
+			alert(diff2);
 		}
 	}
 </script>
@@ -20,7 +24,7 @@
 <body>
 		시작일 : <input type='date'  id='startDate'> 
 		~
-		종요일  : <input type='date' id='endDate'> 
+		종료일  : <input type='date' id='endDate'> 
 		
 		<input type='button' id='btn' value='여행일정'>
 </body>
