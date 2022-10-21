@@ -5,6 +5,18 @@
 <title> 부분독립페이지 </title>
 <script type="text/javascript">
 
+window.onload = function(){
+		let sel = frm.site;
+		for(let i=0; i<sel.length; i++){
+			sel[i].onclick = function(){
+				// alert(this.value);
+				// 현재 창의 부속인 iframe 안에 요소는 
+				// iframe의 name 값으로 찾는다
+				ifrm.fm.result.value = this.value; // 4_iframe.html화면에 4_sub.html 화면을 띄우기
+			}
+		}
+	}
+	
 </script>
 </head>
 <body>
@@ -13,8 +25,7 @@
 		<input type="radio" name="site"  value='다음'> 다음 <br>
 		<input type="radio" name="site"  value='네이버'> 네이버 <br>
 		<input type="radio" name="site"  value='네이트'> 네이트 <br>
-		결과받기 : <input type='text' name='result' size='20'/>
-		<br/>
+		결과받기 : <input type='text' name='result' size='20'/><br/>
 		<br/>
 </form>
 

@@ -14,13 +14,21 @@
 	var progress = document.getElementById("progress");
 	var current = 0;
 
+	// setInterval(updateProgress, 100);
+	setTimeout(function updateProgress(){progress.value = ++current}, 2000); // 아래의 함수가 통째로 인자의 자리로 들어감
 	
-	
+/*  	function updateProgress(){
+ 		progress.value = ++current;
+ 		if(current==100){
+  			clearInterval();
+		}
+ 	}
+*/	
 	
 
 	/* [참고]
-	window.setInterval(func, time) : time 시간 간격으로 반복 처리를 한다
-	window.setTimeout(func, time) : 지정된 시간이 경과 했을 때 한 번만 처리한다
+	*** window.setInterval(func, time) : time 시간 간격으로 반복 처리를 한다
+		window.setTimeout(func, time) : 지정된 시간이 경과 했을 때 한 번만 처리한다
 	
 	그러나,
 	1) 실행시간을 보증하지 않는다

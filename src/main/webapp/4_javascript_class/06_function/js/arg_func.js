@@ -8,12 +8,12 @@ function arrayProcess( data, f ) {
 
 // 각각의 데이터를 더하는 함수
 var sumResult = 0;
-function sum(  data ){	
+function sum( data ){	
 	sumResult += parseInt(data);
 }
 
 // 각각의 데이터의 곱을 구하는 함수
 var squareResult = new Array();
-function square(  data ){			
+function square( data ){			
 	squareResult.push( data * data );
 }
