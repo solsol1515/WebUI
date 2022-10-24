@@ -3,13 +3,13 @@ $(function(){
    $('img').hover(
    /*마우스를 올렸을 때*/
    function(){
-      var src = $(this).attr('src');                  //이미지 주소값 불러와서
-      $(this).attr('src',src.replace('off','on'));    //off를 on으로 바꿔줌
+      var src = $(this).attr('src');                  //이미지 주소값 불러오기(.attr)
+      $(this).attr('src',src.replace('off','on'));    //off → on으로 바꿔줌(.attr(a, b))
    },
    /*마우스를 내렸을 때*/
    function(){
-      var src = $(this).attr('src');                  //이미지 주소값 불러와서
-      $(this).attr('src',src.replace('on','off'));    //on을 off로 바꿔줌
+      var src = $(this).attr('src');                  //이미지 주소값 불러오기(.attr)
+      $(this).attr('src',src.replace('on','off'));    //on → off로 바꿔줌(.attr(b, a))
    })
 })
 
@@ -23,6 +23,7 @@ $(function() {
 		$(this).attr("src", src.replace("on", "off"));
 	});
 });
+
 ------------------------------------------------------------
 $ (function() {
 	
