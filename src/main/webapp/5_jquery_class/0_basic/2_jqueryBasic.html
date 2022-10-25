@@ -45,6 +45,57 @@ $(function(){
 	
 //	let src = $('#changeGrim').attr('src');
 	
+	// 4
+	/*
+		<요소 속성='값'>문자</요소>
+		- text(): 태그 사이의 문자를 가져오거나 지정하는 함수
+		- html(): 태그 사이의 문자를 가져오거나 html 요소로 인식하여 지정하는 함수
+		- attr(): 태그 안에 속성값을 가져오거나 지정하는 함수
+		
+		* val(): 사용자 입력값이나 선택값을 가져오거나 지정할 때 → value 속성
+	*/
+	
+	$('#tf').val('여기에 이름');
+	// 텍스트에어리어에는 "설명을 합니다"라는 문장을 지정
+	$('#ta').val('설명을 합니다');
+	// 콤보박스에는 '인천'을 선택
+	$('#sel').val('incheon');
+	// 리스트에서는 '제주도', '독도'를선택
+	$('#sel_m').val(['seom1','seom3']); // -> 동시에 여러개 선택 
+	
+	// 5	동적 요소 생성하거나 이동할 때
+	// 			부모 요소.append(자식요소);
+	// 			자식 요소.appendTo(부모요소);
+	let actor = $('#actor');
+	let tae = $('#tae');
+	let su= $('#su');
+	let bin = $('#bin');
+	
+	actor.append(tae);
+	su.appendTo(actor);
+	
+	actor.append('<div id="han">한배우</div>');
+	
+	let n = $('<div/>');
+	n.text('두배우');
+	n.attr('id', 'du');
+	n.appendTo(actor);
+	
+	// 6
+	/* $('.data').each(function(){});
+	
+	$('.data').click(function(){
+		alert($(this).text());
+	}) */
+	
+	$('.data').each(function(){
+		$('.data').click(function(){
+			alert($(this).text());
+		})
+	});
+	
+	
+	
 })
 </script>
 </head>

@@ -19,25 +19,25 @@ td.menu {
 	text-align : center;
 }
 
-.menutbl{
+.optiontbl{
 	margin:10px;
 	padding:0px;		
 	border:1px dotted black;
 	border-radius: 10px;
 	font-family: 'Nanum Gothic', serif;
 }
-.menutbl tr td {
+.optiontbl tr td {
 	padding-top: 30px;
 }
-.menutbl tr td img{
+.optiontbl tr td img{
 	padding-bottom: 5px;
 }
-.menutbl tr td select{
+.optiontbl tr td select{
 	margin: 10px;
 	padding:3px;
 }
 
-#menutitle{
+#optiontitle{
 	height:100px;
 	background-color :#EEEAE3;
 	font-family: 'Jeju Gothic', serif;

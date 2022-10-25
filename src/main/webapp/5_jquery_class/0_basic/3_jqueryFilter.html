@@ -3,7 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>jquery filter</title>
-
+  <script type="text/javascript" src='../lib/jquery-3.6.1.min.js'></script>
+  <script type="text/javascript">
+  
+  $(function(){
+	  // $('선택자').addClass('클래스명');
+		
+	  // 1) 각 종류의 첫 번째 요소 선택 
+	  
+	  $('#food > li:first').addClass('bg');
+ 	  $('li:nth-child(1)').addClass('bg');
+// 	  $('ul').find('li:eq(0)').addClass('bg');
+  
+  	  // 2) 음식 중에서 세 번째 요소 선택
+  	   $('#food > li:nth-child(3)').addClass('border');
+//     $('#food > li:eq(2)').addClass('border');
+  	  
+  	  // 3) '튀김'을 포함하는 요소 선택
+  	   $('#food > li:contains("튀김")').addClass('borderBlue');
+  	  
+  	  // 4) 술 종류 중 두 번째 요소 선택
+  	   $('ul:eq(1)').find('li:eq(1)').addClass('borderRed');
+  });
+  
+  </script>
 <!--4. class 속성제어 -->
 <style type="text/css">
 	.bg { background : yellow; }
@@ -16,7 +39,7 @@
 <body>
 		<h1>제이쿼리 시작</h1>
 		<h2>내가 좋아하는 음식 </h2>
-		<ul id="food">
+		<ul id="food" class="food">
 			<li>떡볶이</li>
 			<li>어묵</li>
 			<li>닭튀김</li>
