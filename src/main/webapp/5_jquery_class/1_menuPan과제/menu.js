@@ -8,11 +8,12 @@
 	
 }) */
 
-$(document).ready(function(){
-
+$(function(){
 	// 1. 메뉴 선택 
-	
-	
+	$('#damgi').click(function(){
+		
+	});
+})	
 	// 2. 옵션_각 옵션 선택
 	
 	
@@ -20,6 +21,3 @@ $(document).ready(function(){
 	
 	
 	// 4. 3에서 받은 값을 주문내역으로 한꺼번에 보내기
-
-
-})

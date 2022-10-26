@@ -62,14 +62,14 @@ td.menu {
 #listtitle{
 	height: 100px;
 	font-family: 'Jeju Gothic', serif;
-	background-color :#EEEAE3;
+	background-color: #EEEAE3;
 }
 #listtr{
 	height:50px;
 	border-bottom: 1px dotted;
 	font-family: 'Nanum Gothic', serif;
 }
-#listTable td{
+#listTable .list td{
 	text-align : center;
 	border-bottom: 1px dotted;
 }
@@ -78,10 +78,30 @@ td.menu {
 	height:50px;
 }
 
+@font-face {
+    font-family: 'neon';
+    src: url('images/KoPubWorld Dotum Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'kor';
+    src: url('images/한국기계연구원_bold.ttf') format('truetype');
+}
 .btn1{
 	border: 0px;
 }
 
-.btn1:hover{
-	background: skyblue;
+#btn1{
+	border: 1px groove;
+	background-color: #607EA6;
+	font-size:36px;
+	font-family: 'neon', serif;
+	border-radius: 8px;
+}
+
+#btn2{
+	background-color: #b5b3ac;
+	font-size:36px;
+	font-family: 'kor', serif;
+	border-radius: 10px;
 }

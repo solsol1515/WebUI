@@ -1,0 +1,5 @@
+//accordion()
+
+$(function(){
+	$('.accordion').accordion();
+})
