@@ -11,13 +11,41 @@
 
   <script type="text/javascript">
 
+  $(function(){
+	  
+	  // jStorage에 저장된 값 얻어서 화면에 출력하기
+	  $('#name').val($.jStorage.get('name')); // id 이름을 찾아서 jStorage에 저장되어 있는 이름값 가져와서 출력
+	  $('#memo').val($.jStorage.get('memo')); // id 메모를 찾아서 jStorage에 저장되어 있는 메모값 가져와서 출력
+	  
+	  
+	  $('#set').click(function(){ // 등록 버튼이 눌렸을 때
+		let n = $('#name').val();
+	  	let m = $('#memo').val();
+	  	
+	  	$.jStorage.set('name', n); // n에 name값 저장
+	  	$.jStorage.set('memo', m); // m에 memo값 저장
+	  	
+	  	location.reload();
+	  	
+	  })
+	  
+	  // 쿠키는 유효기간이 있어 그 기간이 지나면 지워지지만 스토리지는 그대로 남아있음
+	  
+	   $('#del').click(function(){
+		  $.jStorage.deleteKey('name');
+		  $.jStorage.deleteKey('memo');
+		  location.reload();
+	  })
+  })
+  	
+  
   </script>
 </head>
 <body>
 <form id="sample">
   이름：<input id="name" /><br />
   비고：<input id="memo" /><br /><br />
-  <button id="set">등록</button>
+  <button id="set">등록</button> 
   <button id="del">삭제</button>
 </form>
 

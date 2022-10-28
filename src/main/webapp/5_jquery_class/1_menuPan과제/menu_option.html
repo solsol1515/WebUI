@@ -10,10 +10,10 @@
 
 	#damgi{
 	position: absolute;
-    top: 50px;
-    left: 330px;
+    top: 40px;
+    left: 310px;
 	}
-	
+
 </style>
 
 </head>
@@ -25,25 +25,25 @@
 		<th colspan=6 id="opt_titleText">O P T I O N</th>
 	</tr>
 	<tr class="option1">
-		<td >HOT/COLD</td>
+		<td>HOT/ ICED</td>
 		<td id='hot' class='hot'>
 			<img src="./images/hot.png"/><br/>
 			<span id="label1" value='따뜻한 음료'>따뜻한 음료</span><br/>
-			<input type='radio' name='hot_cold' value='0' checked>+0원
+			<input type='radio' name='hot_cold' value='HOT'>+0원
 			<br/>
 		</td>
 		<td id='ice' class='ice'>
 			<img src="./images/ice.png" /> <br/>
 			<span id="label2" value ='차가운 음료'>차가운 음료</span><br/>
-			<input type='radio' name='hot_cold' value='0'>+0원
+			<input type='radio' name='hot_cold' value='ICED'>+0원
 		</td>
 		
 	<tr class="size">
-		<td>사이즈 선택</td>
+		<td>사이즈</td>
 		<td id='small' class='small'>
 			<img src="./images/s.png" /><br/>
 			<span id="label4" value='samll'>small</span><br/>
-			<input type='radio' name='size' value='-500'>-500원
+			<input type='radio' name='size' value='500'>-500원
 			<br/>
 		</td>
 		<td id='medium' class='medium'>
@@ -63,33 +63,33 @@
 		<td id='vanilla' class='vanilla'>
 			<img src="./images/syrup.png" /><br/>
 			<span id="syrup1" value='바닐라시럽'>바닐라시럽</span><br/>
-			 <input type='radio' name='add' value='300'>+300원
+			 <input type='radio' name='syrup' value='300'>+300원
 		</td>
 		<td id='hazelnut' class='hazelnut'>
 			<img src="./images/macadamia.png" /><br/>
 			<span id="syrup2" value='헤이즐넛시럽'>헤이즐넛시럽</span><br/>
-			<input type='radio' name='add' value='300'>+300원
+			<input type='radio' name='syrup' value='300'>+300원
 		</td>
 		<td id='none' class='none'>
 			<img src="./images/none.png" /><br/>
 			<span id="none1" value='추가없음'>추가없음</span><br/>
-			<input type='radio' name='add' value='0' checked>+0원
+			<input type='radio' name='syrup' value='0' checked>+0원
 	</tr>
 	
 	<tr class="option3">
-		<td>샷추가 추가</td>
+		<td>샷 추가</td>
 		<td id='shot' class='shot'>
 			<img src="./images/shot(1).png" /><br/>
 			<span id="aShot" value='샷추가'>샷추가</span><br/>
-			<input type='radio' name='add' value='400'>+400원
+			<input type='radio' name='shot' value='400'>+400원
 		</td>
 		<td id='none' class='none'>
 			<img src="./images/none.png" /><br/>
 			<span id="noShot" value='추가없음'>추가없음</span><br/>
-			<input type='radio' name='addShot' value='0' checked>+0원
+			<input type='radio' name='shot' value='0' checked>+0원
 	</tr>
 	<tr>
-	<input id="damgi" type="button" value="담기">
+	<button id="damgi" type="button" value="담기">담 기</button>
 	</tr>
 </table>
 </div>

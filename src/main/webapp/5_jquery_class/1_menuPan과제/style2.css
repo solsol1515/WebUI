@@ -37,13 +37,28 @@ td.menu {
 	padding:3px;
 }
 
+.option1{
+	font-family: 'neon';
+}
+
+.option2{
+	font-family: 'neon';
+}
+
+.option3{
+	font-family: 'neon';
+}
+
+.size{
+	font-family: 'neon';
+}
 #optiontitle{
 	height:100px;
-	background-color :#EEEAE3;
+	background-color :rgb(233, 237, 228);;
 	font-family: 'Jeju Gothic', serif;
 }
 
-#titleText{
+#opt_titleText{
 	font-size: 30px;
 	text-align : left;
 	padding-left: 100px;
@@ -60,9 +75,9 @@ td.menu {
 	border-collapse: collapse;
 }
 #listtitle{
-	height: 100px;
+	height: 50px;
 	font-family: 'Jeju Gothic', serif;
-	background-color :#EEEAE3;
+	background-color :rgb(233, 237, 228);
 }
 #listtr{
 	height:50px;
@@ -78,10 +93,20 @@ td.menu {
 	height:50px;
 }
 
-.btn1{
-	border: 0px;
+@font-face {
+    font-family: 'neon';
+    src: url('images/KoPubWorld Dotum Bold.ttf') format('truetype');
 }
 
-.btn1:hover{
-	background: skyblue;
+#damgi{
+   font-family: 'neon';
+   font-size:15px;
+   height:45px;
+   width:80px;
+   color:white;
+   border: 3px solid rgb(160, 179, 136);
+   background-color: rgb(160, 179, 136);
+   border-radius: 8px;
+   margin : auto;
+   display: block;
 }

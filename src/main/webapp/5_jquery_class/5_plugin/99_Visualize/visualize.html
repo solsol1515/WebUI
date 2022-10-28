@@ -3,8 +3,26 @@
 <head>
 <meta charset="UTF-8" />
 <title>Visualize</title>
-<script type="text/javascript"  src=""></script>
+<!-- 1. CSS -->
+<link rel="stylesheet" type="text/css" href='./css/visualize.css'>
+<link rel="stylesheet" type="text/css" href='./css/visualize-dark.css'>
 
+<!-- jqeury lib -->
+<script type="text/javascript" src="../../lib/jquery-3.6.1.min.js"></script>
+
+<!-- 플러그인 lib -->
+<script type="text/javascript" src="js/visualize.jQuery.js"></script>
+
+<script type="text/javascript">
+
+$(function(){
+	$('#data').visualize({type:'bar'});
+	$('#data').visualize({type:'pie'});
+	$('#data').visualize({type:'area'});
+	$('#data').visualize({type:'line'});
+})
+
+</script>
 </head>
 <body>
 <table id="data">
