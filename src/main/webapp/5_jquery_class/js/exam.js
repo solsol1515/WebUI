@@ -76,5 +76,8 @@ $(function(){
 	
 	// 7. 그 외 추가적으로 구현하면 해당 화면 캡쳐하고 코드를 작성합니다.
 	
+	$('.print_btn').click(function(){
+		window.print();
+	})
 	
 })
